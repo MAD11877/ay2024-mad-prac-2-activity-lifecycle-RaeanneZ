@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +23,32 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        User userJohn = new User("John Doe","MAD Developer",1);
+
+        //display user info (name and desc) in labels
+        TextView headerTextView = findViewById(R.id.Header);
+        headerTextView.setText(userJohn.getName());
+
+        TextView bodyTextView = findViewById(R.id.BodyText);
+        bodyTextView.setText(userJohn.getDescription());
+
+        //get buttons and define listeners
+        Button followBtn = findViewById(R.id.FollowBtn);
+        followBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userJohn.setFollowed(!userJohn.isFollowed());
+                if (userJohn.isFollowed()){
+                    followBtn.setText("UNFOLLOW");
+                } else {
+                    followBtn.setText("FOLLOW");
+                }
+            }
+        });
+
     }
+
+
+
 }
