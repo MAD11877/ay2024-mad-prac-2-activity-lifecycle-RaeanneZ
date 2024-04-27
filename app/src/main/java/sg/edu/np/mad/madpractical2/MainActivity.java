@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        User userJohn = new User("John Doe","MAD Developer",1);
+        User userJohn = new User("John Doe","MAD Developer",1, false);
 
         //display user info (name and desc) in labels
         TextView headerTextView = findViewById(R.id.Header);
