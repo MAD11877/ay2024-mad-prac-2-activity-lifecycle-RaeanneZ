@@ -29,18 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
         //display user info (name and desc) in labels
         TextView headerTextView = findViewById(R.id.Header);
-        headerTextView.setText(userJohn.getName());
+        headerTextView.setText(userJohn.name);
 
         TextView bodyTextView = findViewById(R.id.BodyText);
-        bodyTextView.setText(userJohn.getDescription());
+        bodyTextView.setText(userJohn.description);
 
         //get buttons and define listeners
         Button followBtn = findViewById(R.id.FollowBtn);
         followBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userJohn.setFollowed(!userJohn.isFollowed());
-                if (userJohn.isFollowed()){
+                userJohn.followed = (!userJohn.followed);
+                if (userJohn.followed){
                     followBtn.setText("UNFOLLOW");
                 } else {
                     followBtn.setText("FOLLOW");
