@@ -1,10 +1,10 @@
 package sg.edu.np.mad.madpractical2;
 
 public class User {
-    String name;
-    String description;
-    int id;
-    boolean followed;
+    public String name;
+    public String description;
+    public int id;
+    public boolean followed;
 
     public User(String ip_name, String ip_desc, int ip_id, boolean ip_isFollowed ){
         name = ip_name;
